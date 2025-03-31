@@ -1,15 +1,12 @@
-# silver-octo-giggle
+# crispy-octo-robot > Docker
+
 ## Sumário
-- [Dependências](#dependências)
-- [Instalação](#instalação)
-   - [Ambiente](#ambiente)
-   - [Aplicação](#aplicação)
+- [Requisitos](#requisitos)
+- [Configuração](#configuração)
+- [Inicialização](#inicialização)
 - [Acesso](#acesso)
 
-
-## Instalação
-
-### Dependências
+## Requisitos
 
 - Docker e Docker Compose:
 ```bash
@@ -22,34 +19,20 @@ echo "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docke
 apt update && apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
-### Aplicação
+## Configuração
 
-- Download do projeto:
-```bash
-git clone https://github.com/BraunEduardo/ideal-disco.git
-```
-
-### Ambiente
-
-- Clone do projeto:
-```bash
-git clone https://github.com/BraunEduardo/silver-octo-giggle.git
-```
 - Configurações do '.env':
 ```bash
-cd silver-octo-giggle
 cp -a .env-template .env
 # Edite os parâmetros conforme desejado
 ```
-- Vínculo da aplicação:
-```bash
-ln -s /path/to/ideal-disco app/root
-```
+
+## Inicialização
+
 - Build e up do ambiente:
 ```bash
 COMPOSE_BAKE=true docker compose up -d
 ```
 
 ## Acesso
-- A aplicação estará acessível pelos no localhost com a porta específicada (default 80)
-- O serviço de e-mail estará acessível no localhost com a porta especificada (default 8025)
+- A aplicação estará acessível no localhost com a porta específicada (default 80)

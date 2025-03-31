@@ -31,3 +31,5 @@ A documentação completa das rotas está disponível em [crispy-octo-robot.post
 - Reembolso de transação
 
 ## Considerações
+- Me sentiria mais confortável tendo liberdade para estruturação total do banco de dados
+- Falta documentação sobre erros dos gateways

@@ -14,6 +14,11 @@ services:
       - db-var-log:/var/log
     networks:
       - net0
+    healthcheck:
+      test: "mysql -e 'select 1'"
+      interval: 1s
+      retries: 30
+
 
   gateways:
     image: matheusprotzen/gateways-mock
@@ -32,13 +37,13 @@ services:
     container_name: ${CLIENTE}_app
     hostname: ${CLIENTE}_app
     depends_on:
-      - db
-      - gateways
+      db:
+        condition: service_healthy
+      # - gateways
     restart: always
     working_dir: /var/www
     volumes:
-      - ./www:/var/www
-        # - ./app/root:/var/www/app
+      - ../application:/var/www/app
       - app-var-log:/var/log
     networks:
       - net0

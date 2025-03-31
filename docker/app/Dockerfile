@@ -28,6 +28,7 @@ RUN apt-get update && apt-get install -y locales tzdata\
 # nginx e PHP
 RUN apt update && apt install -y\
  nginx\
+ mysql\
  php-mysql\
  php-gd\
  php-curl\
